@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #4a90e2;
+    --text-color: #333;
+    --background-color: linear-gradient(to bottom, #ffffff, #ca87be);
+    --weekend-color: #e74c3c;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.month-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.month-name {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.day-label {
+    font-weight: bold;
+    color: #7f8c8d;
+    padding-bottom: 5px;
+}
+.day-label:nth-child(7), .day-label:nth-child(1) {
+    color: var(--weekend-color);
+}
+.day {
+    padding: 8px 0;
+    border-radius: 4px;
+}
+.day.empty {
+    background: none;
+}
+.day.actual-day:hover {
+    background-color: #eef2f7;
+    cursor: pointer;
+}
+.day.today {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+
+.sidebar {
+    background-color: #e6e6e5;
+    width: 90px;
+    min-height: 100vh;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 5px;
+    transition: padding 0.3s ease, width 0.3s ease;
+}
+.sidebar:hover {width: 150px;}
+
+.sidebar-button {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 12px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+
+}
+
+.sidebar:hover .sidebar-button {width: 170px;}
+
+.sidebar-button:hover {
+    background-color: #d9d9d9;
+    border-radius: 18px;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px grey;
+}
+
+.sidebar-image {
+   width: 35px;
+   height: 35px;
+   object-fit: cover;
+
+   flex-shrink: 0;
+   margin: 0;
+   border: none;
+   box-shadow: none;
+}
