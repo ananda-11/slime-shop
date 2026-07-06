@@ -71,7 +71,7 @@ header {
     cursor: pointer;
 }
 .day.today {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: rgb(255, 103, 128);
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }

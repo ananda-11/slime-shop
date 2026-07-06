@@ -1,83 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Year Calendar</title>
-    <link href="style.css" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Mea+Culpa&family=Noto+Sans+Old+Turkic&family=Rammetto+One&display=swap" rel="stylesheet">
-
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Full Year Calendar</title> 
+    <link href="style.css" rel="stylesheet"> 
+    <link rel="preconnect" href="https://googleapis.com"> 
+    <link rel="preconnect" href="https://gstatic.com" crossorigin> 
+    <link href="https://googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Mea+Culpa&family=Noto+Sans+Old+Turkic&family=Rammetto+One&display=swap" rel="stylesheet"> 
     <style>
+        .day.actual-day {
+            cursor: pointer; 
+            transition: background-color 0.2s ease;
+        }
+        
+        .day.actual-day:hover {
+            background-color: #f0f0f0; 
+        }
 
-    </style>
+        .day.actual-day.selected-day {
+            background-color: #fff2bc !important;
+            border-radius: 4px;
+        }
+    </style> 
+</head> 
+<body> 
+<div class="d-flex"> 
+    <h1 id="calendar-year" class="rammetto-one-regular">RSVP</h1> 
+    <div class="calendar-container" id="calendar-grid"></div> 
+    
+    <script> 
+        const currentYear = new Date().getFullYear(); 
+        document.getElementById('calendar-year').textContent = `RSVP for attendance — ${currentYear}`; 
+        const monthNames = [ 
+            "January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December" 
+        ]; 
+        const dayLabels = ["Sun", "Mon", "Tu", "We", "Th", "Fr", "Sa"]; 
+        const calendarGrid = document.getElementById('calendar-grid'); 
+        
+        for (let month = 0; month < 12; month++) { 
+            const monthCard = document.createElement('div'); 
+            monthCard.className = 'month-card'; 
+            
+            const monthNameDiv = document.createElement('div'); 
+            monthNameDiv.className = 'month-name'; 
+            monthNameDiv.textContent = monthNames[month]; 
+            monthCard.appendChild(monthNameDiv); 
+            
+            const daysGrid = document.createElement('div'); 
+            daysGrid.className = 'days-grid'; 
+            
+            dayLabels.forEach(label => { 
+                const labelDiv = document.createElement('div'); 
+                labelDiv.className = 'day-label'; 
+                labelDiv.textContent = label; 
+                daysGrid.appendChild(labelDiv); 
+            }); 
+            
+            const firstDayIndex = new Date(currentYear, month, 1).getDay(); 
+            const totalDays = new Date(currentYear, month + 1, 0).getDate(); 
+            
+            for (let i = 0; i < firstDayIndex; i++) { 
+                const emptyDiv = document.createElement('div'); 
+                emptyDiv.className = 'day empty'; 
+                daysGrid.appendChild(emptyDiv); 
+            } 
+            
+            const today = new Date(); 
+            for (let day = 1; day <= totalDays; day++) { 
+                const dayDiv = document.createElement('div'); 
+                dayDiv.className = 'day actual-day'; 
+                dayDiv.textContent = day; 
+                
+                if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) { 
+                    dayDiv.classList.add('today'); 
+                } 
 
-</head>
-<body>
-    <div class="d-flex"> 
-    <h1 id="calendar-year" class="rammetto-one-regular">RSVP</h1>
-
-    <div class="calendar-container" id="calendar-grid"></div>
-
-        <script>
-            const currentYear = new Date().getFullYear();
-            document.getElementById('calendar-year').textContent = `RSVP for attendance — ${currentYear}`;
-
-            const monthNames = [
-                "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-            ];
-
-            const dayLabels = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-            const calendarGrid = document.getElementById('calendar-grid');
-
-            for (let month = 0; month < 12; month++) {
-                const monthCard = document.createElement('div');
-                monthCard.className = 'month-card';
-
-                const monthNameDiv = document.createElement('div');
-                monthNameDiv.className = 'month-name';
-                monthNameDiv.textContent = monthNames[month];
-                monthCard.appendChild(monthNameDiv);
-
-                const daysGrid = document.createElement('div');
-                daysGrid.className = 'days-grid';
-
-                dayLabels.forEach(label => {
-                    const labelDiv = document.createElement('div');
-                    labelDiv.className = 'day-label';
-                    labelDiv.textContent = label;
-                    daysGrid.appendChild(labelDiv);
+                dayDiv.addEventListener('click', function() {
+                    this.classList.toggle('selected-day');
                 });
-
-                const firstDayIndex = new Date(currentYear, month, 1).getDay();
-                const totalDays = new Date(currentYear, month + 1, 0).getDate();
-
-                for (let i = 0; i < firstDayIndex; i++) {
-                    const emptyDiv = document.createElement('div');
-                    emptyDiv.className = 'day empty';
-                    daysGrid.appendChild(emptyDiv);
-                }
-
-                const today = new Date();
-                for (let day = 1; day <= totalDays; day++) {
-                    const dayDiv = document.createElement('div');
-                    dayDiv.className = 'day actual-day';
-                    dayDiv.textContent = day;
-
-                    if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) {
-                        dayDiv.classList.add('today');
-                    }
-
-                    daysGrid.appendChild(dayDiv);
-                }
-
-                monthCard.appendChild(daysGrid);
-                calendarGrid.appendChild(monthCard);
-            }
-        </script>
-    </div>
-</body>
+                
+                daysGrid.appendChild(dayDiv); 
+            } 
+            monthCard.appendChild(daysGrid); 
+            calendarGrid.appendChild(monthCard); 
+        } 
+    </script> 
+    <button type="button" class="btn btn-primary mt-3">Select slime meetup(s)</button>
+</div> 
+</body> 
 </html>
