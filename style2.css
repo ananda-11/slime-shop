@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 40px 20px;
     background-image: linear-gradient(to bottom, #f0f0f0, #ffb8de);
+
 }
 
 .box-section {
@@ -14,20 +15,20 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 header h1{
-    font-size: 3.5rem;
+    font-size: 7rem;
     margin:0;
     letter-spacing:-1px;
 
 }
 
 header p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
-    letter-spacing:2px;
+    letter-spacing:12px;
     color:#666;
 
 }
@@ -115,9 +116,4 @@ img {
 .slimeimage{
     width: 250px;
     height: 250px;
-}
-
-.box-section {
-    display:grid;
-    place-items:center;
 }
