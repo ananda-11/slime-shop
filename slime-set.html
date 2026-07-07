@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSVP Confirmation Page</title>
+</head>
+<body>
+
+    <h1>Your slime meetups have been selected for: </h1>
+    <ul id="display-dates-list">
+    </ul>
+
+    <script>
+        const storedDatesData = localStorage.getItem('rsvpSelectedDates');
+        const chosenDates = storedDatesData ? JSON.parse(storedDatesData) : [];
+        const listContainer = document.getElementById('display-dates-list');
+
+        if (chosenDates.length === 0) {
+            listContainer.innerHTML = "<li>No dates selected yet! Go back to the calendar </li>";
+        } else {
+            chosenDates.forEach(dateString => {
+                const listItem = document.createElement('li');
+                listItem.textContent = dateString; 
+                listContainer.appendChild(listItem);
+            });
+
+            
+        }
+    </script>
+    <h1>Thank you for RSVPing! We look forward to seeing you at the slime meetups!</h1>
+    <button onClick="window.location.href='calendar.html'">Back to Calendar</button>
+    <button onClick="window.location.href='shop.html'">Back to home</button>
+
+
+</body>
+</html>

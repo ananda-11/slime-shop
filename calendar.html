@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Full Year Calendar</title> 
     <link href="style.css" rel="stylesheet"> 
-    <link rel="preconnect" href="https://googleapis.com"> 
-    <link rel="preconnect" href="https://gstatic.com" crossorigin> 
-    <link href="https://googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Mea+Culpa&family=Noto+Sans+Old+Turkic&family=Rammetto+One&display=swap" rel="stylesheet"> 
+
     <style>
         .day.actual-day {
             cursor: pointer; 
@@ -26,7 +24,7 @@
 </head> 
 <body> 
 <div class="d-flex"> 
-    <h1 id="calendar-year" class="rammetto-one-regular">RSVP</h1> 
+    <h1 id="calendar-year">RSVP</h1> 
     <div class="calendar-container" id="calendar-grid"></div> 
     
     <script> 
@@ -68,24 +66,40 @@
             } 
             
             const today = new Date(); 
-            for (let day = 1; day <= totalDays; day++) { 
-                const dayDiv = document.createElement('div'); 
-                dayDiv.className = 'day actual-day'; 
-                dayDiv.textContent = day; 
-                
-                if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) { 
-                    dayDiv.classList.add('today'); 
-                } 
+            for (let day = 1; day <= totalDays; day++) {
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'day actual-day';
+    dayDiv.textContent = day;
+    
+    const formattedMonth = String(month + 1).padStart(2, '0');
+    const formattedDay = String(day).padStart(2, '0');
+    dayDiv.dataset.date = `${currentYear}-${formattedMonth}-${formattedDay}`;
 
-                dayDiv.addEventListener('click', function() {
-                    this.classList.toggle('selected-day');
-                });
-                
-                daysGrid.appendChild(dayDiv); 
-            } 
+    if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) { 
+        dayDiv.classList.add('today'); 
+    } 
+
+    dayDiv.addEventListener('click', function() {
+        this.classList.toggle('selected-day');
+        
+        const selectedElements = document.querySelectorAll('.selected-day');
+        
+        const selectedDates = Array.from(selectedElements).map(el => el.dataset.date);
+        
+        localStorage.setItem('rsvpSelectedDates', JSON.stringify(selectedDates));
+    });
+    
+    daysGrid.appendChild(dayDiv); 
+}
+
             monthCard.appendChild(daysGrid); 
             calendarGrid.appendChild(monthCard); 
+
+
         } 
+        
+
+
     </script> 
     <button type="button" class="btn btn-primary mt-3" onClick="window.location.href='slime-set.html'">Select slime meetup(s)</button>
 </div> 
