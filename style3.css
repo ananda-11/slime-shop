@@ -147,3 +147,43 @@
 .chat-input-area button:hover {
   background-color: royalblue;
 }
+
+/* Fullscreen navbar overlay */
+.fullscreen-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: rgba(17, 17, 17, 0.98);
+  padding: 0;
+}
+
+.fullscreen-navbar .container-fluid {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.fullscreen-navbar .navbar-brand {
+  font-size: 3rem;
+  color: #fff !important;
+}
+
+.fullscreen-navbar .btn {
+  font-size: 1.6rem;
+  padding: 12px 24px;
+}
+
+@media (min-width: 768px) {
+  .fullscreen-navbar .container-fluid {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+    align-items: center;
+  }
+}
