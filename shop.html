@@ -9,7 +9,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Slime Shop</title>
-        <link rel= "stylesheet" href="style2.css"> 
+        <link href="style2.css" rel="stylesheet" > 
+        <link href="style3.css" rel="stylesheet" >
     </head>
 
     <body>
@@ -53,6 +54,47 @@
     <p class="description">fix sticky slime immidentidety. Perfevt for on the go</p>
     <p class="price">$2.99</p>
         </main>
+
+        <button class="chat-button" onclick="toggleChat()">💬</button>
+
+        <div class="chat-box" id="chatBox">
+
+            <div class="chat-header">
+            <img src="C:\Users\Student\Desktop\WyattB\slime-shop\images\chatbot.jpg" alt="Assistant">
+
+            <div>
+                <strong>AI Assistant</strong><br>
+                <small>Ask me anything!</small>
+            </div>
+            </div>
+
+            <div class="chat-messages" id="chatLog">
+
+            <div class="message-row ai">
+                <img class="avatar" src="C:\Users\Student\Desktop\WyattB\slime-shop\images\chatbot.jpg" alt="AI">
+
+                <div class="message-bubble">
+                Hi! How can I help you today?
+                </div>
+            </div>
+
+            </div>
+
+            <div class="chat-input-area">
+
+            <input
+                id="userInput"
+                type="text"
+                placeholder="Type your message..."
+            >
+
+            <button onclick="sendMessage()">Send</button>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
     </body>
     </html>
 
