@@ -25,17 +25,17 @@
 </head> 
 <body> 
 <div class="d-flex"> 
-    <h1 id="calendar-year">RSVP</h1> 
+    <button type="button" class="btn btn-primary mt-3" onClick="window.location.href='shop.html'">Back to Home</button>
+    <h1 id="calendar-year">RSVP for 2026!</h1>
     <div class="calendar-container" id="calendar-grid"></div> 
     
     <script> 
         const currentYear = new Date().getFullYear(); 
-        document.getElementById('calendar-year').textContent = `RSVP for attendance — ${currentYear}`; 
         const monthNames = [ 
             "January", "February", "March", "April", "May", "June", 
             "July", "August", "September", "October", "November", "December" 
         ]; 
-        const dayLabels = ["Sun", "Mon", "Tu", "We", "Th", "Fr", "Sa"]; 
+        const dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
         const calendarGrid = document.getElementById('calendar-grid'); 
         
         for (let month = 0; month < 12; month++) { 
@@ -73,8 +73,10 @@
     dayDiv.textContent = day;
     
     const formattedMonth = String(month + 1).padStart(2, '0');
+
+
     const formattedDay = String(day).padStart(2, '0');
-    dayDiv.dataset.date = `${currentYear}-${formattedMonth}-${formattedDay}`;
+    dayDiv.dataset.date = `${formattedMonth}-${formattedDay}-${currentYear}`;
 
     if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) { 
         dayDiv.classList.add('today'); 
@@ -95,8 +97,6 @@
 
             monthCard.appendChild(daysGrid); 
             calendarGrid.appendChild(monthCard); 
-
-
         } 
         
 
