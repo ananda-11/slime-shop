@@ -6,6 +6,12 @@ body {
     padding: 40px 20px;
 }
 
+.box-section {
+    display:grid;
+    place-items:center;
+}
+
+
 header {
     text-align: center;
     margin-bottom: 50px;
@@ -92,27 +98,26 @@ header p {
     margin:10px 0;
 }
 
-.quick-add-btn{
-    display:block;
-    text-align:center;
-    background-color: #111;
-    color: #111;
-    text-decoration: none;
-    padding: 12px;
-    font-weight: bold;
-    text-transform:uppercase;
-    font-size:0.9rem;
-    transition: background 0.2s ease;
 
-}
-
-.quick-add-btn:hover {
-    background-color: #ff4444;
-}
 
 footer{
     text-align:center;
     margin-top:60px;
     font-size: 0.8rem;
     color:#999;
+}
+
+img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.slimeimage{
+    width: 50px;
+    height: 50px;
+}
+
+.box-section {
+    display:grid;
+    place-items:center;
 }
