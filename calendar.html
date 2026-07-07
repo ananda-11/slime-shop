@@ -84,6 +84,24 @@
             monthCard.appendChild(daysGrid); 
             calendarGrid.appendChild(monthCard); 
         } 
+        const selectedDays = new Set();
+        document.querySelectorAll('.day.actual-day').forEach(dayDiv => {
+            dayDiv.addEventListener('click', function() {
+                const day = parseInt(this.textContent);
+                const month = Array.from(this.parentNode.parentNode.children).indexOf(this.parentNode);
+                const dateKey = `${currentYear}-${month + 1}-${day}`;
+                
+                if (selectedDays.has(dateKey)) {
+                    selectedDays.delete(dateKey);
+                    this.classList.remove('selected-day');
+                } else {
+                    selectedDays.add(dateKey);
+                    this.classList.add('selected-day');
+                }
+            });
+        });
+
+        
     </script> 
     <button type="button" class="btn btn-primary mt-3" onClick="window.location.href='slime-set.html'">Select slime meetup(s)</button>
 </div> 
