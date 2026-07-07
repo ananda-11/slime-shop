@@ -3,6 +3,20 @@
     --text-color: #ffe0ff;
     --weekend-color: #000000;
 }
+button {
+    background-color: #f6bebe;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+button:hover {
+    background-color: #ffb6b6;
+    color: #ffffff;
+}
 h1 {
     color: #f6bebe;
     margin: 0;
