@@ -2,9 +2,7 @@
 
 <html>
     <head>
-
- <div class="box-section">
-
+        
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -31,72 +29,71 @@
                 background-color: rgb(233, 198, 212);
                 padding: 10px;
             }
+
+            img {
+                border-radius: 15px;
+                margin: 20px;
+            }
+            h3 {font-size:1.5rem;}
+
         </style>
 
     </head>
 
     <body>
-
+        <div class="box-section">
             <nav class="navbar navbar-expand-lg" style="width: 100%;">
                 <div class="container">
                     <a class="navbar-brand" href="shop.html">Slimy shop</a>
-
-                    <div>
-                        <button href="calendar.html" onclick="window.location.href='calendar.html'">Calendar</button>
-                    </div>
+                </div>
+                <div>
+                    <button href="calendar.html" onclick="window.location.href='calendar.html'">Calendar</button>
                 </div>
             </nav>
-        <div class="container mt-4">
-            <div class="container mt-4">
 
-                <div class="box-section">
-                </div>
+            <div class="container mt-4 mb-4">
 
-            <header>
                 <h1> SLIME SHOP</h1>
-                <p> raw . authentic . slimtastic </p>
-            </header>
-                
-                <div class="slime-card">
-                    <span class="level-badge beginner"></span>
-                    <img class="slimeimage" src="images/OGSlimes26.webp">
-                    <div class="">🕯️</div> <h3> OG Labo </h3>
-                    <p class="description">Santal 33 type scented slay slime</p>
-                    <p class="price">$15.69</p>
-                </div>
+                <p> raw . authentic . slimtastic </p>                
+                <div class="row">
+                    <div class="slime-card" class="col">
+                        <img class="slimeimage" src="images/OGSlimes26.webp">
+                        <h3> OG Labo 🕯️</h3>
+                        <p class="description">Santal 33 type scented slay slime</p>
+                        <p class="price">$15.69</p>
+                    </div>
                 
 
-                <div class="slime-card">
-                    <span class="level-badge beginner"></span>
-                    <img class="slimeimage" src="images/pink_rhodochrosite.webp">
-                    <div class="">🌸</div> <h3> Pink Rhodochrosite</h3>
-                    <p class="description">Icee x Cloud Dough texture. Super satsfying</p>
-                    <p class="price">$15.99</p>
-                </div>
+                    <div class="slime-card" class="col">
+                        <img class="slimeimage" src="images/pink_rhodochrosite.webp">
+                        <h3> Pink Rhodochrosite 🌸</h3>
+                        <p class="description">Icee x Cloud Dough texture. Super satisfying</p>
+                        <p class="price">$15.99</p>
+                    </div>
 
-                <div class="slime-card">
-                    <span class="level-badge intermediate"></span>
-                    <img class="slimeimage" src="images/gorillagloo.webp">
-                    <div class="">🦍</div> <h3>Gorilla Gloo</h3>
-                    <p class="description">Choco Banana Milkshake scented slime with clacky cicks</p>
-                    <p class="price">$16.99</p>
+                    <div class="slime-card" class="col">
+                        <img class="slimeimage" src="images/gorillagloo.webp">
+                        <h3> Gorilla Gloo 🦍</h3>
+                        <p class="description">Choco Banana Milkshake scented slime with clacky clicks</p>
+                        <p class="price">$16.99</p>
+                    </div>
+                
                 </div>
+                <div class="row">
+                    <div class="slime-card">
+                        <img class="slimeimage" src="images/ponyo.webp">
+                        <h3> Ponyo 🐟</h3>
+                        <p class="description">Bubble bead textured stretchy slime</p>
+                        <p class="price">$18.99</p>
+                    </div>
 
-                <div class="slime-card">
-                    <span class="level-badge Advanced"></span>
-                    <img class="slimeimage" src="images/ponyo.webp">
-                    <div class="">🐟</div> <h3> Ponyo </h3>
-                    <p class="description">Bubble bead textured stretchy slime</p>
-                    <p class="price">$18.99</p>
-                </div>
-
-                <div class="slime-card">
-                    <span class="level-badge accessory"></span>
-                    <img class="slimeimage" src="images/Activator_Spray_8ff10929-749e-4c9c-ac26-810651e19b2c.webp">
-                    <div class="">pen emoji</div> <h3> Activator pen </h3>
-                    <p class="description">fix sticky slime immidentidety. Perfevt for on the go</p>
-                    <p class="price">$2.99</p>
-                    
+                    <div class="slime-card">
+                        <img class="slimeimage" src="images/Activator_Spray_8ff10929-749e-4c9c-ac26-810651e19b2c.webp">
+                        <h3> Activator pen 🖊️</h3>
+                        <p class="description">Fix sticky slime immediately Perfect for on the go =></p>
+                        <p class="price">$2.99</p>
+                        
+                    </div>
                 </div>
 
                 <button class="chat-button" onclick="toggleChat()">💬</button>
@@ -123,21 +120,20 @@
                     </div>
 
                     <div class="chat-input-area">
-
-                    <input
-                        id="userInput"
-                        type="text"
-                        placeholder="Type your message..."
-                    >
-
-                    <button onclick="sendMessage()">Send</button>
-
+                        <input
+                            id="userInput"
+                            type="text"
+                            placeholder="Type your message..."
+                        >
+                        <button onclick="sendMessage()">Send</button>
                     </div>
 
                 </div>
 
                 <script src="script.js"></script>
-</div>
-        </body>
-        </html>
+            </div>
+        </div>
+
+    </body>
+</html>
 

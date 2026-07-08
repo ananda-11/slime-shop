@@ -44,76 +44,69 @@ header p {
 .slime-card {
     background: #f3e4ea;
     border: 7px solid #ffff;
-    padding:30px;
-    border-radius:px;
-    display:flex;
-    flex-direction:column;
-    position:relative;
-
+    max-width: 375px;
+    border-radius:15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.level-badge {
-    position: absolute;
-    top:15px;
-    left:15px;
-    font-size:0.7rem;
-    font-weight:bold;
-    text-transform:uppercase;
-    padding:3px 8px;
-    border: 1.5px solid #111
+.slime-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.beginner{ background-color: #a8ffb2;}
-.intermediate {background-color: #ffd3a8;}
-.advanced {background-color: #fca8ff;}
-.accessory {background-color: #a8efff;}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
 .slime-image-placeholder {
-    height:160px;
+    height: 160px;
     background-color: #f0f0f0;
-    border:2px dashed #ccc;
+    border: 2px dashed #ccc;
     margin-top: 25px;
     margin-bottom: 15px;
     display: flex;
-    align-items:center;
-    justify-content:center;
-    font-size:3rem;
-}
-
-.slime-card h3 {
-    margin:10px 0 5px 0;
-    font-size: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
 }
 
 .description{
-    font-size: 2rem;
+    font-size: 1rem;
     color: #444;
     line-height: 1.4;
     margin-bottom: 15px;
     flex-grow: 1;
+    text-align: center;
 }
 
 .price{
-    font-size:5rem;
+    font-size:1.5rem;
     font-weight:bold;
     margin:10px 0;
 }
 
-
-
-footer{
+footer {
     text-align:center;
     margin-top:60px;
     font-size: 0.8rem;
     color:#999;
 }
 
-img {
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
 .slimeimage{
     width: 250px;
     height: 250px;
+    align-items: center;
+    justify-content: center;
 }
