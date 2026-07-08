@@ -13,17 +13,36 @@
         <link href="style2.css" rel="stylesheet" > 
         <link href="style3.css" rel="stylesheet" >
 
+        <style>
+            button {
+                background-color: white;
+                color: rgb(148, 0, 96);
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border: none;
+                border-radius: 10px;
+                width: 100px;
+                height: 40px;
+            }
+            button:hover {
+                background-color: rgb(148, 0, 96);
+                color: white;
+            }
+            .navbar {
+                background-color: rgb(233, 198, 212);
+                padding: 10px;
+            }
+        </style>
+
     </head>
 
     <body>
 
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="width: 100%;">
+            <nav class="navbar navbar-expand-lg" style="width: 100%;">
                 <div class="container">
                     <a class="navbar-brand" href="shop.html">Slimy shop</a>
 
                     <div>
-                        <a class="btn btn-outline-light me-2" href="shop.html">Home</a>
-                        <a class="btn btn-success" href="calendar.html">Calendar</a>
+                        <button href="calendar.html" onclick="window.location.href='calendar.html'">Calendar</button>
                     </div>
                 </div>
             </nav>

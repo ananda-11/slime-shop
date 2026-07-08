@@ -26,12 +26,17 @@
             });
 
             
+        }        
+        
+        function clearSelectedDates() {
+            localStorage.removeItem('rsvpSelectedDates');
+            window.location.reload();
         }
     </script>
     <h4>Thank you for RSVPing! We look forward to seeing you at the slime meetups!</h4>
     <button onClick="window.location.href='calendar.html'">Back to Calendar</button>
     <button onClick="window.location.href='shop.html'">Back to home</button>
-
+    <button onClick="clearSelectedDates()">Clear Selected Dates</button>
 
 </body>
 </html>
