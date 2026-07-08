@@ -11,21 +11,6 @@
         <link href="style.css" rel="stylesheet" > 
 
         <style>
-            button {
-                background-color: white;
-                color: rgb(148, 0, 96);
-                transition: background-color 0.3s ease, color 0.3s ease;
-                border: none;
-                border-radius: 10px;
-                width: 100px;
-                height: 40px;
-                text-align: center;
-            }
-            button:hover {
-                background-color: rgb(148, 0, 96);
-                color: white;
-            }
-
             img {
                 border-radius: 15px;
                 margin: 20px;
@@ -34,6 +19,14 @@
             h1 {text-align: center;}
             .navbar-brand{font-weight: bold; text-decoration: underline; color: rgb(148, 0, 96); font-size:large}
             p {text-align: center;}
+            .activ {
+                transition: rotate 0.2s ease;
+                width: 250px;
+                height: 250px;
+                align-items: center;
+                justify-content: center;
+            }
+            .activ:hover {rotate: 720deg;}
 
         </style>
 
@@ -94,7 +87,7 @@
 
 
                 <div class="slime-card">
-                    <img class="slimeimage" src="images/Activator_Spray_8ff10929-749e-4c9c-ac26-810651e19b2c.webp">
+                    <img class="activ" class="slimeimage" src="images/Activator_Spray_8ff10929-749e-4c9c-ac26-810651e19b2c.webp">
                     <h3> Activator pen </h3>
                     <p class="description">fix sticky slime immidentidety. Perfevt for on the go</p>
                     <p class="price">$2.99</p>
