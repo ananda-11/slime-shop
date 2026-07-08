@@ -20,16 +20,30 @@ button:hover {
     color: #ffffff;
 }
 h1 {
-    color: #f6bebe;
+    color: #000000;
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: "courier new", Courier, monospace;
+    text-align: center;
 }
+
 body {
-    font-family: "courier new", Courier, monospace;
     background-image: linear-gradient(to bottom, #ffffff, #ffb8de);
     color: black;
+    font-family:'Courier New', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.navbar {
+    background-color: rgb(233, 198, 212);
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 html {
@@ -95,15 +109,6 @@ header {
     font-weight: bold;
 }
 
-body {
-    font-family:'Courier New', 'Courier New', Courier, monospace;
-    color:#666;
-    margin: 0;
-    padding: 40px 20px;
-    background-image: linear-gradient(to bottom, #f0f0f0, #ffb8de);
-
-}
-
 .box-section {
     display:grid;
     place-items:center;
@@ -152,12 +157,14 @@ header p {
     margin-left: 5px;
     margin-right: 5px;
     padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease, scale 0.3s ease;
 }
 
 .slime-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    rotate: 90deg;
+    scale: 1.05;
 }
 
 .flex-container {
