@@ -62,13 +62,14 @@
                 localStorage.setItem('username', username);
                 const password = document.getElementById('password').value;
 
+                if(localStorage.getItem('username') == null || localStorage.getItem('password') == null) {alert('No account found, please sign up first!');}
+
                 if (password === localStorage.getItem('password')) {
                     alert(`Signed in as ${username}`);
                     window.location.href = 'shop.html';
-                } else {
-                alert('Incorrect password, either sign up or try again!');
-                }
-
+                } 
+                else {alert('Incorrect password, either sign up or try again!');}
+                
 
             });
 
@@ -79,6 +80,7 @@
                 localStorage.setItem('username', newUsername);
                 localStorage.setItem('password', newPassword);
                 alert(`Account created for ${newUsername} -- you can now sign in!`);
+                signupForm.remove();
             });
         </script>
 
