@@ -39,15 +39,10 @@ body {
     opacity: 0.8;
   }
   100% {
-    /* Floats straight up and expands slightly for a organic look */
     transform: scale(1.1) translateY(-180px);
     opacity: 0;
   }
 }
-
-
-
-
 
 .navbar {
     background-color: rgb(233, 198, 212);
