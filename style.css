@@ -18,11 +18,7 @@ body {
     font-family:'Courier New', 'Courier New', Courier, monospace;
     margin: 0;
     padding: 40px 20px;
-<<<<<<< Updated upstream
     width: fit
-=======
-    height: 500px
->>>>>>> Stashed changes
 }
 
 .bubble {
@@ -58,10 +54,9 @@ body {
     margin-left: 0;
     margin-right: 0;
     height: 60px;
-    width: 150px;
+    width: 1000px;
     transition: width 0.3s ease;
 }
-
 
 html {
     height: 150%;
