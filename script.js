@@ -24,7 +24,7 @@ async function sendMessage() {
 
   chatLog.innerHTML += `
     <div class="message-row ai" id="thinkingMessage">
-      <img class="avatar" src="C:\\Users\\Student\\Desktop\\slime-shop\\images\\chatbot.jpg" alt="AI">
+      <img class="avatar" src="images/chatbot.jpg" alt="AI">
       <div class="message-bubble thinking">Thinking...</div>
     </div>
   `;
@@ -68,7 +68,7 @@ async function sendMessage() {
 
       chatLog.innerHTML += `
         <div class="message-row ai">
-          <img class="avatar" src="C:\\Users\\Student\\Desktop\\slime-shop\\images\\chatbot.jpg" alt="AI">
+          <img class="avatar" src="images/chatbot.jpg" alt="AI">
           <div class="message-bubble">
             Error: ${data.error.message}
           </div>
@@ -83,7 +83,7 @@ async function sendMessage() {
 
     chatLog.innerHTML += `
       <div class="message-row ai">
-        <img class="avatar" src="C:\\Users\\Student\\Desktop\\slime-shop\\images\\chatbot.jpg" alt="AI">
+        <img class="avatar" src="images/chatbot.jpg" alt="AI">
         <div class="message-bubble">${reply}</div>
       </div>
     `;
@@ -98,7 +98,7 @@ async function sendMessage() {
 
     chatLog.innerHTML += `
       <div class="message-row ai">
-        <img class="avatar" src="C:\\Users\\Student\\Desktop\\slime-shop\\images\\chatbot.jpg" alt="AI">
+        <img class="avatar" src="images/chatbot.jpg" alt="AI">
         <div class="message-bubble">
           Network error. Check your API key.
         </div>
