@@ -146,3 +146,19 @@ async function sendMessage() {
   }
 
 }
+
+
+const userIsLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+if (userIsLoggedIn) {
+  console.log("User is logged in on this page!");
+}
+
+if(localStorage.getItem('username') !== null && localStorage.getItem('password') !== null) { 
+    document.getElementById('login-btn').style.display = 'none';
+    const usernameDisplay = document.createElement('span');
+    usernameDisplay.id = 'username-display';
+    usernameDisplay.textContent = `Welcome, ${localStorage.getItem('username')}!`;
+    document.querySelector('.navbar').appendChild(usernameDisplay);
+}
+localStorage.setItem("isLoggedIn", "true");

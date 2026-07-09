@@ -82,7 +82,7 @@
 
                 if (password === localStorage.getItem('password')) {
                     alert(`Signed in as ${username}`);
-                    window.location.href = 'shop.html';
+                    window.location.href = 'shop.html';  
                 } 
                 else {alert('Incorrect password, either sign up or try again!');}
                 
@@ -98,6 +98,8 @@
                 alert(`Account created for ${newUsername} -- you can now sign in!`);
                 signupForm.remove();
             });
+
+
         </script>
    <div class="slime-card">
         <img src="images\chatbot.jpg" alt="chatbot" style="width: 100%; height: auto; margin-top: 80px;">
