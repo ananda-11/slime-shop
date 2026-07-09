@@ -108,16 +108,3 @@ async function sendMessage() {
   }
 
 }
-
-if(username === null) {
-  alert("You must be signed in to access the shop.");
-  window.location.href = "signin.html";
-}
-else if (username !== null) {
-  const welcomeMessage = document.getElementById("welcomeMessage");
-  welcomeMessage.textContent = `Welcome, ${username}!`;
-}
-else {
-  const welcomeMessage = document.getElementById("welcomeMessage");
-  welcomeMessage.textContent = "Welcome, Guest!";
-}

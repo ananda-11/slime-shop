@@ -8,17 +8,30 @@
         <link href="style.css" rel="stylesheet" >
         
         <style>
-            .signin {
-                transition: height 0.7s ease;
-                height: 300px;
+            .submit {transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;}
+            .submit:hover {
+                background-color: rgb(148, 0, 96);
+                color: white;
+                transform: scale(1.1);
             }
-            .signin:hover {
-                height: 400px;
-            }
+            label {transition: font-size 0.3s ease, color 0.3s ease;}
+            label:hover{font-size: 1.2rem; color: rgb(148, 0, 96);}
+            h1 {transition: font-size 0.3s ease, color 0.3s ease;}
+            h1:hover {font-size: 2.5rem; color: rgb(148, 0, 96);}
         </style>
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg" style="width: 100%;">
+            <div class="container">
+                <a class="navbar-brand" href="shop.html">Slimy shop</a>
+            </div>
+            <div>
+                <button onclick="window.location.href='calendar.html'">Calendar</button>
+                <button onclick="window.location.href='gallery.html'">Moments</button>
+                <button onclick="window.location.href='signin.html'">Sign in/up</button>
+            </div>
+        </nav>
         <div class="signin">
             <h1>Sign in to your account</h1>
             <form id="signin-form">
@@ -26,7 +39,7 @@
                 <input type="text" id="username" name="username" required><br><br>
                 <label for="password">Password: </label>
                 <input type="text" id="password" name="password" required><br><br>
-                <input type="submit" value="Sign In">
+                <input class="submit" type="submit" value="Sign In">
             </form>
         </div>
         <div class="signup">
@@ -36,7 +49,7 @@
                 <input type="text" id="new-username" name="new-username" required><br><br>
                 <label for="new-password">Password:</label>
                 <input type="password" id="new-password" name="new-password" required><br><br>            
-                <input type="submit" value="Sign Up">
+                <input class="submit" type="submit" value="Sign Up">
             </form>
         </div>
         <script>
@@ -68,6 +81,8 @@
                 alert(`Account created for ${newUsername} -- you can now sign in!`);
             });
         </script>
+
+        <img src="images\chatbot.jpg" alt="chatbot" style="width: 100%; height: auto; margin-top: 20px;">
 
     </body>
 </html>
