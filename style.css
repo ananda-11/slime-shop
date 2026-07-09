@@ -406,17 +406,16 @@ element.style {
     height: 80px;
 }
 
-.navbar-brand {
+.navbar-brand{
+    font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: underline;
-    color: rgb(148, 0, 96);
-    font-size: large;
+    color: white;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
-
-
-
-
+.navbar-brand:hover {
+    color: rgb(150, 0, 98);
+    text-shadow: 2px 2px 4px rgb(150,0,98);
+}
 
 
 

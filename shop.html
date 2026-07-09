@@ -15,7 +15,6 @@
             }
             h3 {font-size:1.5rem;}
             h1 {text-align: center;}
-            .navbar-brand{font-weight: bold; text-decoration: underline; color: rgb(148, 0, 96); font-size:large}
             p {text-align: center;}
             .activ {
                 transition: rotate 0.2s ease;
@@ -142,34 +141,34 @@
             </div>
         </div>
 
-<h1>! Slime Hub ! </h1>
-        <div id="chat-hub">
-    <div id="message-display"></div>
-    <form id="chat-input-form">
-      <input type="text" id="chat-input" placeholder="Type a message..." />
-      <button type="submit">Send</button>
-    </form>
-  </div>
+        <h1>! Slime Hub ! </h1>
+                <div id="chat-hub">
+            <div id="message-display"></div>
+            <form id="chat-input-form">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button type="submit">Send</button>
+            </form>
+        </div>
 
-  <script>
-    const form = document.getElementById('chat-input-form');
-    const input = document.getElementById('chat-input');
-    const display = document.getElementById('message-display');
+        <script>
+            const form = document.getElementById('chat-input-form');
+            const input = document.getElementById('chat-input');
+            const display = document.getElementById('message-display');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const messageText = input.value.trim();
-      
-      if (messageText !== '') {
-        const messageNode = document.createElement('p');
-        messageNode.textContent = messageText;
-        display.appendChild(messageNode);
-        
-        form.reset(); 
-        display.scrollTop = display.scrollHeight;
-      }
-    });
-  </script>
+            form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const messageText = input.value.trim();
+            
+            if (messageText !== '') {
+                const messageNode = document.createElement('p');
+                messageNode.textContent = messageText;
+                display.appendChild(messageNode);
+                
+                form.reset(); 
+                display.scrollTop = display.scrollHeight;
+            }
+            });
+        </script>
 
     </body>
 </html>

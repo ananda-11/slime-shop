@@ -36,6 +36,7 @@
                 </div>
             </nav>
         </div>
+        
         <h1 id="calendar-year">RSVP for 2026!</h1> <br>
         <div class="calendar-container" id="calendar-grid"></div> 
         
@@ -78,38 +79,36 @@
                 
                 const today = new Date(); 
                 for (let day = 1; day <= totalDays; day++) {
-        const dayDiv = document.createElement('div');
-        dayDiv.className = 'day actual-day';
-        dayDiv.textContent = day;
-        
-        const formattedMonth = String(month + 1).padStart(2, '0');
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'day actual-day';
+                    dayDiv.textContent = day;
+                    
+                    const formattedMonth = String(month + 1).padStart(2, '0');
 
 
-        const formattedDay = String(day).padStart(2, '0');
-        dayDiv.dataset.date = `${formattedMonth}-${formattedDay}-${currentYear}`;
+                    const formattedDay = String(day).padStart(2, '0');
+                    dayDiv.dataset.date = `${formattedMonth}-${formattedDay}-${currentYear}`;
 
-        if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) { 
-            dayDiv.classList.add('today'); 
-        } 
+                    if (day === today.getDate() && month === today.getMonth() && currentYear === today.getFullYear()) { 
+                        dayDiv.classList.add('today'); 
+                    } 
 
-        dayDiv.addEventListener('click', function() {
-            this.classList.toggle('selected-day');
-            
-            const selectedElements = document.querySelectorAll('.selected-day');
-            
-            const selectedDates = Array.from(selectedElements).map(el => el.dataset.date);
-            
-            localStorage.setItem('rsvpSelectedDates', JSON.stringify(selectedDates));
-        });
-        
-        daysGrid.appendChild(dayDiv); 
-    }
+                    dayDiv.addEventListener('click', function() {
+                        this.classList.toggle('selected-day');
+                        
+                        const selectedElements = document.querySelectorAll('.selected-day');
+                        
+                        const selectedDates = Array.from(selectedElements).map(el => el.dataset.date);
+                        
+                        localStorage.setItem('rsvpSelectedDates', JSON.stringify(selectedDates));
+                    });
+                    
+                    daysGrid.appendChild(dayDiv); 
+                }
 
                 monthCard.appendChild(daysGrid); 
                 calendarGrid.appendChild(monthCard); 
             } 
-            
-
 
         </script>
 
