@@ -18,6 +18,7 @@ body {
     font-family:'Courier New', 'Courier New', Courier, monospace;
     margin: 0;
     padding: 40px 20px;
+    width: fit
 }
 
 .bubble {
@@ -53,12 +54,13 @@ body {
     margin-left: 0;
     margin-right: 0;
     height: 60px;
-    width: 150px;    transition: width 0.3s ease;
+    width: 150px;
+    transition: width 0.3s ease;
 }
 
 
 html {
-    height: 115%;
+    height: 150%;
 }
 
 header {
