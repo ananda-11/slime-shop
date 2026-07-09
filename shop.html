@@ -148,30 +148,30 @@
         <h1>! Slime Hub ! </h1>
             <div id="chat-hub">
             <div id="message-display"></div>
-
-            <form id="chat-input-form">
-                <input type="text" id="chat-input" placeholder="Type your name..." />
-                <button type="submit">Send</button>
-            </form>
-
-            <form id="chat-input-form">
-                <input type="text" id="chat-input" placeholder="Type a message..." />
-                <button type="submit">Send</button>
-            </form>
+        
+            <div class="container">
+                <form id="chat-input-form">
+                    <input type="text" id="chat-input1" placeholder="Type your name..." />
+                    <input type="text" id="chat-input2" placeholder="Type a message..." />
+                    <button type="submit">Send</button>
+                </form>            
+            </div>
         </div>
 
         <script>
             const form = document.getElementById('chat-input-form');
-            const input = document.getElementById('chat-input');
+            const username = document.getElementById('chat-input1');
+            const mess = document.getElementById('chat-input2');
             const display = document.getElementById('message-display');
 
             form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const messageText = input.value.trim();
+            const usernameText = username.value.trim();
+            const messageText = mess.value.trim();
             
-            if (messageText !== '') {
+            if (usernameText !== '' && messageText !== '') {
                 const messageNode = document.createElement('p');
-                messageNode.textContent = messageText;
+                messageNode.textContent = `${usernameText}: ${messageText}`;
                 display.appendChild(messageNode);
                 
                 form.reset(); 
@@ -179,8 +179,6 @@
             }
             });
         </script>
-
-
 
 
     </body>
