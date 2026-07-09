@@ -25,6 +25,11 @@
                 justify-content: center;
             }
             .activ:hover {rotate: 720deg;}
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
         </style>
 
@@ -40,10 +45,6 @@
                     <button onclick="window.location.href='signin.html'">Sign in/up</button>
                 </div>
             </nav>
-
-            <div>
-                    
-                </div>
 
             <div class="container mt-4 mb-4">
                 <h1> Slimtastic Moments</h1>
@@ -164,7 +165,6 @@
         messageNode.textContent = messageText;
         display.appendChild(messageNode);
         
-        // Reset and scroll to bottom
         form.reset(); 
         display.scrollTop = display.scrollHeight;
       }
