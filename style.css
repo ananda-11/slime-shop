@@ -374,7 +374,7 @@ footer {
 .chat-input-area button:hover {
   background-color: royalblue;
 }
-
+/* 
 .fullscreen-navbar {
   position: fixed;
   top: 0;
@@ -412,7 +412,7 @@ footer {
     padding: 0 40px;
     align-items: center;
   }
-}
+} */
 
 button {
     background-color: white;

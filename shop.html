@@ -16,6 +16,15 @@
             h3 {font-size:1.5rem;}
             h1 {text-align: center;}
             .navbar-brand{font-weight: bold; text-decoration: underline; color: rgb(148, 0, 96); font-size:large}
+            .navbar {
+                width: 600px;
+                border-radius: 10px;
+                transition: width 2.0s ease, background-color 0.3s ease;
+            }
+            .navbar:hover {
+                width: 100%;
+                background-color: rgb(233, 198, 212);
+            }
             p {text-align: center;}
             .activ {
                 transition: rotate 0.2s ease;
@@ -32,7 +41,7 @@
 
     <body>
         <div class="box-section">
-            <nav class="navbar navbar-expand-lg" style="width: 100%;">
+            <nav class="navbar">
                 <div class="container">
                     <a class="navbar-brand" href="shop.html">Slimy shop</a>
                 </div>
@@ -101,7 +110,7 @@
 
                 <div class="slime-card">
                         <a href="https://ogslimes.com/collections/all-slimes/products/activator-pen" target="_blank">
-                            <img class="slimeimage" src="images\Activator_Spray_8ff10929-749e-4c9c-ac26-810651e19b2c.webp">
+                            <img class="activ" class="slimeimage" src="images\Activator_Spray_8ff10929-749e-4c9c-ac26-810651e19b2c.webp">
                         </a>                    <h3> Activator pen </h3>
                     <p class="description">fix sticky slime immidentidety. Perfevt for on the go</p>
                     <p class="price">$2.99</p>
@@ -124,9 +133,7 @@
                         <div class="message-row ai">
                             <img class="avatar" src="images/chatbot.jpg" alt="AI">
 
-                            <div class="message-bubble">
-                                Hi! How can I help you today?
-                            </div>
+                            <div class="message-bubble">Hi! How can I help you today?</div>
                         </div>
                     </div>
 

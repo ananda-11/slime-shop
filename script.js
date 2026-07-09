@@ -31,7 +31,7 @@ async function sendMessage() {
 
   chatLog.scrollTop = chatLog.scrollHeight;
 
-  const API_KEY = "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";
+  const API_KEY = "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";
 
   const payload = {
     model: "gpt-4o-mini",
