@@ -1,25 +1,51 @@
 const container = document.querySelector('.bubble-container');
 
+// CONFIGURATION: Increased to 120ms for heavy separation and distinct gaps
+const spacingDelay = 120; 
+let lastSpawnTime = 0;
+
 document.addEventListener('mousemove', (e) => {
+  const currentTime = Date.now();
+
+  // Forces a strict gap between bubble spawns
+  if (currentTime - lastSpawnTime < spacingDelay) {
+    return; 
+  }
+  lastSpawnTime = currentTime;
+
   const bubble = document.createElement('div');
   bubble.classList.add('bubble');
 
-  // Generates a random size between 40px and 180px
-  const size = Math.random() * 140 + 40; 
+  // HIGH VARIANCE SIZE LOGIC: 
+  // Math.random() determines if it's a tiny bubble or a giant bubble.
+  // This yields a chaotic, highly distinct mix of sizes.
+  let size;
+  const sizeRoll = Math.random();
+  
+  if (sizeRoll < 0.4) {
+    // 40% chance to be a small accent bubble (15px to 45px)
+    size = Math.random() * 30 + 15;
+  } else if (sizeRoll < 0.8) {
+    // 40% chance to be a large bubble (60px to 110px)
+    size = Math.random() * 50 + 60;
+  } else {
+    // 20% chance to be a massive giant bubble (140px to 220px)
+    size = Math.random() * 80 + 140;
+  }
   
   bubble.style.width = `${size}px`;
   bubble.style.height = `${size}px`;
 
-  // Centers the massive bubble perfectly under the cursor
+  // Center under cursor perfectly
   bubble.style.left = `${e.clientX - size / 2}px`;
   bubble.style.top = `${e.clientY - size / 2}px`;
 
   container.appendChild(bubble);
 
-  // Cleans up the page after the animation ends
+  // Clean up the DOM
   setTimeout(() => {
     bubble.remove();
-  }, 2000); // Increased to 2 seconds for a slower, floaty feel
+  }, 2000);
 });
 
 
