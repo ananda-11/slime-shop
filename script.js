@@ -93,7 +93,7 @@ async function sendMessage() {
   }
 
   catch (error) {
-
+    console.log(error);
     document.getElementById("thinkingMessage").remove();
 
     chatLog.innerHTML += `
