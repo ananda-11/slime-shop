@@ -1,4 +1,6 @@
 const container = document.querySelector('.bubble-container');
+userisloggedin = false;
+
 
 const spacingDelay = 120; 
 let lastSpawnTime = 0;
@@ -146,7 +148,6 @@ async function sendMessage() {
   }
 
 }
-
 
 const userIsLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
