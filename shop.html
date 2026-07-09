@@ -47,6 +47,9 @@
                     <button onclick="window.location.href='calendar.html'">Calendar</button>
                     <button onclick="window.location.href='gallery.html'">Moments</button>
                     <button id="login-btn" onclick="window.location.href='signin.html'">Sign in/up</button>
+                    <button type="button" onclick="handleLogout()" class="logout-btn">Log Out</button>
+
+
                 </div>
             </nav>
 
@@ -184,7 +187,11 @@
             }
             });
 
-
+            function handleLogout() {
+                localStorage.removeItem("username"); 
+                localStorage.removeItem("password");
+                window.location.href = "shop.html"; 
+            }
 
         </script>
 
