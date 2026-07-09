@@ -1,3 +1,35 @@
+const container = document.querySelector('.bubble-container');
+
+document.addEventListener('mousemove', (e) => {
+  // Create the bubble element
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+
+  // Generate a random size for bubble variety (e.g., 10px to 30px)
+  const size = Math.random() * 20 + 10;
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+
+  // Position the bubble at the cursor (using e.clientX/Y)
+  bubble.style.left = `${e.clientX - size / 2}px`;
+  bubble.style.top = `${e.clientY - size / 2}px`;
+
+  // Add to the container
+  container.appendChild(bubble);
+
+  // Remove the bubble after 1.5 seconds to clean up the DOM
+  setTimeout(() => {
+    bubble.remove();
+  }, 1500);
+});
+
+
+
+
+
+
+
+
 function toggleChat() {
 
   const chatBox = document.getElementById("chatBox");
