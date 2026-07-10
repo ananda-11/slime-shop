@@ -36,9 +36,9 @@
         <nav class="navbar">
             <a class="navbar-brand" href="index.php">Slimy shop</a>
             <div>
-                <button onclick="window.location.href='calendar.html'">Calendar</button>
-                <button onclick="window.location.href='gallery.html'">Moments</button>
-                <button onclick="window.location.href='signin.html'">Sign in/up</button>
+                <button onclick="window.location.href='calendar.php'">Calendar</button>
+                <button onclick="window.location.href='gallery.php'">Moments</button>
+                <button onclick="window.location.href='signin.php'">Sign in/up</button>
             </div>
         </nav>
         <div class="signin">
@@ -75,7 +75,7 @@
 
                 if (password === localStorage.getItem('password')) {
                     alert(`Signed in as ${username}`);
-                    window.location.href = 'shop.html';  
+                    window.location.href = 'index.php';  
                 } 
                 else {alert('Incorrect password, either sign up or try again!');}
                 

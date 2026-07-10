@@ -49,9 +49,9 @@
             <nav class="navbar">
                 <a class="navbar-brand" href="index.php">Slimy shop</a>
                 <div>
-                    <button onclick="window.location.href='calendar.html'">Calendar</button>
-                    <button onclick="window.location.href='gallery.html'">Moments</button>
-                    <button id="login-btn" onclick="window.location.href='signin.html'">Sign in/up</button>
+                    <button onclick="window.location.href='calendar.php'">Calendar</button>
+                    <button onclick="window.location.href='gallery.php'">Moments</button>
+                    <button id="login-btn" onclick="window.location.href='signin.php'">Sign in/up</button>
                     <button id="logout-btn" onclick="handleLogout()">Logout</button>
 
                 </div>
