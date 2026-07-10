@@ -46,7 +46,7 @@ function handleLogout() {
 
     localStorage.removeItem("password");
 
-    window.location.href = "shop.html"; 
+    window.location.href = "index.html"; 
 
   }
 
