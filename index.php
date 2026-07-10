@@ -42,7 +42,7 @@
 
         <div class="box-section">
             <nav class="navbar" style="width: 1000px;">
-                    <a class="navbar-brand" href="shop.html">Slimy shop</a>
+                    <a class="navbar-brand" href="index.php">Slimy shop</a>
                 <div>
                     <button onclick="window.location.href='calendar.html'">Calendar</button>
                     <button onclick="window.location.href='gallery.html'">Moments</button>
@@ -183,7 +183,6 @@
                 display.scrollTop = display.scrollHeight;
             }
             });
-
 
 
         </script>
