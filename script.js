@@ -40,6 +40,16 @@ document.addEventListener('mousemove', (e) => {
   }, 2000);
 });
 
+function handleLogout() {
+
+  localStorage.removeItem("username"); 
+
+    localStorage.removeItem("password");
+
+    window.location.href = "shop.html"; 
+
+  }
+
 function toggleChat() {
 
   const chatBox = document.getElementById("chatBox");
