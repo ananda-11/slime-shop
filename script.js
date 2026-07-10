@@ -1,3 +1,55 @@
+const container = document.querySelector('.bubble-container');
+userisloggedin = false;
+
+
+const spacingDelay = 120; 
+let lastSpawnTime = 0;
+
+document.addEventListener('mousemove', (e) => {
+  const currentTime = Date.now();
+
+  if (currentTime - lastSpawnTime < spacingDelay) {
+    return; 
+  }
+  lastSpawnTime = currentTime;
+
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+
+  let size;
+  const sizeRoll = Math.random();
+  
+  if (sizeRoll < 0.4) {
+    size = Math.random() * 30 + 15;
+  } else if (sizeRoll < 0.8) {
+    size = Math.random() * 50 + 60;
+  } else {
+    size = Math.random() * 80 + 140;
+  }
+  
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+
+  bubble.style.left = `${e.clientX - size / 2}px`;
+  bubble.style.top = `${e.clientY - size / 2}px`;
+
+  container.appendChild(bubble);
+
+  setTimeout(() => {
+    bubble.remove();
+  }, 2000);
+});
+
+function handleLogout() {
+
+  localStorage.removeItem("username"); 
+
+    localStorage.removeItem("password");
+
+    window.location.href = "shop.html"; 
+
+  }
+
 function toggleChat() {
 
   const chatBox = document.getElementById("chatBox");
@@ -24,20 +76,18 @@ async function sendMessage() {
 
   chatLog.innerHTML += `
     <div class="message-row ai" id="thinkingMessage">
-      <img class="avatar" src="C:\\Users\\Student\\Desktop\\WyattB\\slime-shop\\images\\chatbot.jpg" alt="AI">
+      <img class="avatar" src="images/chatbot.jpg" alt="AI">
       <div class="message-bubble thinking">Thinking...</div>
     </div>
   `;
 
   chatLog.scrollTop = chatLog.scrollHeight;
 
-  const API_KEY = "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";
-
   const payload = {
     model: "gpt-4o-mini",
 
     messages: [
-      { role: "system", content: "You are a helpful AI assistant for a website. Answer clearly and politely. Give short and conscise answers and always ask the user for more information or suggestions" },
+      { role: "system", content: "You are a helpful AI assistant for a website. Answer clearly and politely. Give short and concise answers and always ask the user for more information or suggestions." },
 
       { role: "user", content: input }
     ]
@@ -68,7 +118,7 @@ async function sendMessage() {
 
       chatLog.innerHTML += `
         <div class="message-row ai">
-          <img class="avatar" src="C:\\Users\\Student\\Desktop\\WyattB\\slime-shop\\images\\chatbot.jpg" alt="AI">
+          <img class="avatar" src="images/chatbot.jpg" alt="AI">
           <div class="message-bubble">
             Error: ${data.error.message}
           </div>
@@ -83,7 +133,7 @@ async function sendMessage() {
 
     chatLog.innerHTML += `
       <div class="message-row ai">
-        <img class="avatar" src="C:\\Users\\Student\\Desktop\\WyattB\\slime-shop\\images\\chatbot.jpg" alt="AI">
+        <img class="avatar" src="images/chatbot.jpg" alt="AI">
         <div class="message-bubble">${reply}</div>
       </div>
     `;
@@ -93,12 +143,12 @@ async function sendMessage() {
   }
 
   catch (error) {
-
+    console.log(error);
     document.getElementById("thinkingMessage").remove();
 
     chatLog.innerHTML += `
       <div class="message-row ai">
-        <img class="avatar" src="C:\\Users\\Student\\Desktop\\WyattB\\slime-shop\\images\\chatbot.jpg" alt="AI">
+        <img class="avatar" src="images/chatbot.jpg" alt="AI">
         <div class="message-bubble">
           Network error. Check your API key.
         </div>
@@ -108,3 +158,18 @@ async function sendMessage() {
   }
 
 }
+
+const userIsLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+if (userIsLoggedIn) {
+  console.log("User is logged in on this page!");
+}
+
+if(localStorage.getItem('username') !== null && localStorage.getItem('password') !== null) { 
+    document.getElementById('login-btn').style.display = 'none';
+    const usernameDisplay = document.createElement('span');
+    usernameDisplay.id = 'username-display';
+    usernameDisplay.textContent = `Welcome, ${localStorage.getItem('username')}!`;
+    document.querySelector('.navbar').appendChild(usernameDisplay);
+}
+localStorage.setItem("isLoggedIn", "true");
