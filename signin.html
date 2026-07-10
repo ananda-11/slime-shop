@@ -20,12 +20,7 @@
             label:hover{font-size: 1.2rem; color: rgb(148, 0, 96);}
             h1 {transition: font-size 0.3s ease, color 0.3s ease;}
             h1:hover {font-size: 2.5rem; color: rgb(148, 0, 96);}
-
-            
-
-            .box-section {
-    display:grid;
-    place-items:center;}
+            .box-section {display:grid; place-items:center;}
 
         </style>
     </head>
@@ -71,13 +66,11 @@
                 localStorage.setItem('username', username);
                 const password = document.getElementById('password').value;
 
-                if(localStorage.getItem('username') == null || localStorage.getItem('password') == null) {alert('No account found, please sign up first!');}
-
                 if (password === localStorage.getItem('password')) {
                     alert(`Signed in as ${username}`);
                     window.location.href = 'index.html';  
                 } 
-                else {alert('Incorrect password, either sign up or try again!');}
+                else {alert('Incorrect username or password, either sign up or try again!');}
                 
 
             });

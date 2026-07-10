@@ -1,6 +1,17 @@
-const container = document.querySelector('.bubble-container');
-userisloggedin = false;
+if(localStorage.getItem('username') !== null && localStorage.getItem('password') !== null) { 
+    document.getElementById('login-btn').style.display = 'none';
+    const usernameDisplay = document.createElement('span');
+    usernameDisplay.id = 'username-display';
+    usernameDisplay.textContent = `Welcome, ${localStorage.getItem('username')}!`;
+    document.querySelector('.navbar').appendChild(usernameDisplay);
+}
 
+else {
+  document.getElementById('logout-btn').style.display = 'none';
+  document.getElementById('username-display').style.display = 'none';
+}
+
+const container = document.querySelector('.bubble-container');
 
 const spacingDelay = 120; 
 let lastSpawnTime = 0;
@@ -159,17 +170,5 @@ async function sendMessage() {
 
 }
 
-const userIsLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-if (userIsLoggedIn) {
-  console.log("User is logged in on this page!");
-}
 
-if(localStorage.getItem('username') !== null && localStorage.getItem('password') !== null) { 
-    document.getElementById('login-btn').style.display = 'none';
-    const usernameDisplay = document.createElement('span');
-    usernameDisplay.id = 'username-display';
-    usernameDisplay.textContent = `Welcome, ${localStorage.getItem('username')}!`;
-    document.querySelector('.navbar').appendChild(usernameDisplay);
-}
-localStorage.setItem("isLoggedIn", "true");
