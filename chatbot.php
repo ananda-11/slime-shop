@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Assistant Test Page</title>
+
+  <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+
+  <button class="chat-button" onclick="toggleChat()">💬</button>
+
+  <div class="chat-box" id="chatBox">
+
+    <div class="chat-header">
+      <img src="C:\Users\Student\Desktop\WyattB\slime-shop\images\chatbot.jpg" alt="Assistant">
+
+      <div>
+        <strong>AI Assistant</strong><br>
+        <small>Ask me anything!</small>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chatLog">
+
+      <div class="message-row ai">
+        <img class="avatar" src="C:\Users\Student\Desktop\WyattB\slime-shop\images\chatbot.jpg" alt="AI">
+
+        <div class="message-bubble">
+          Hi! How can I help you today?
+        </div>
+      </div>
+
+    </div>
+
+    <div class="chat-input-area">
+
+      <input
+        id="userInput"
+        type="text"
+        placeholder="Type your message..."
+      >
+
+      <button onclick="sendMessage()">Send</button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

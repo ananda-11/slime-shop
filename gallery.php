@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Slime Shop</title>        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="style4.css" rel="stylesheet" > 
+        <link href="style.css" rel="stylesheet" >
+        <script src="script.js"></script>
+
+        <style>
+            button {
+                background-color: white;
+                color: rgb(148, 0, 96);
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border: none;
+                border-radius: 10px;
+                width: auto;
+                height: 40px;
+            }
+            button:hover {
+                background-color: rgb(148, 0, 96);
+                color: white;
+            }
+            .navbar {
+                background-color: rgb(233, 198, 212);
+                padding: 10px;
+            }
+
+            img {
+                border-radius: 15px;
+                margin: 20px;
+            }
+            h3 {font-size:1.5rem;}
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="box-section">        
+            <div class="bubble-container"></div>
+            
+            <nav class="navbar">
+                <a class="navbar-brand" href="index.php">Slimy shop</a>
+                <div>
+                    <button onclick="window.location.href='calendar.php'">Calendar</button>
+                    <button onclick="window.location.href='gallery.php'">Moments</button>
+                    <button id="login-btn" onclick="window.location.href='signin.php'">Sign in/up</button>
+                    <button id="logout-btn" onclick="handleLogout()">Logout</button>
+
+                </div>
+            </nav>
+
+            <div class="container mt-4 mb-4">
+
+                <h1> Slimtastic Moments</h1>
+                <p> raw . authentic . slimtastic </p>                
+                <div class="row">
+                    <div class="slime-card" class="col">
+                        <img class="slimeimage" src="images\sugarcookeidecoslime.webp">
+                        <h3>Proslimer123</h3>
+                        <p class="description"> - Just finished with the diy sugar cookie kit! I stinkin love it❤️!!</p>
+                    </div>
+                
+
+                    <div class="slime-card" class="col">
+                        <img class="slimeimage" src="images\italiam pasta diy slime kit.webp">
+                        <h3> helllokitter435</h3>
+                        <p class="description"> - OMGGG!!! It legit looks so REALLLZ!! LOVEEEE</p>
+                    </div>
+
+                    <div class="slime-card" class="col">
+                        <img class="slimeimage" src="images\sanrio pochacco ice cream slime.webp">
+                        <h3> stephanehughes555</h3>
+                        <p class="description"> - its saur adorbs im literallu so in love!!!! </p>
+                    </div>
+                
+                </div>
+                <div class="row">
+                    <div class="slime-card">
+                        <img class="slimeimage" src="images\diy hot dog slime kit.webp">
+                        <h3> anandabriella1678</h3>
+                        <p class="description"> - i forgot it was slime and was about to eat it... love it though!</p>
+                    </div>
+
+                <div class="slime-card">
+                    <img class="slimeimage" src="images\molding dough cookie deco slime kit.webp">
+                    <h3> BORAXGLUE6767 </h3>
+                    <p class="description">first time trying slime, it was largely fun. very cute</p>
+                </div>
+
+
+                <div class="slime-card">
+                    <img class="slimeimage" src="images/D_NQ_NP_991311-MLA107998668560_032026-O.webp">
+                    <h3>foodtruckers935</h3>
+                    <p class="description"> - I got this for my 9th birthday and i loved it so mcuhhhh!!!</p>
+                </div>
+                <script src="script.js"></script>
+            </div>
+        </div>
+
+    </body>
+</html>
+
